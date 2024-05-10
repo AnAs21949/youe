@@ -42,6 +42,7 @@ function App() {
   const resetCounting = () => {
     setSeconds(360);
     setCounting(false);
+    // console.log("sssssssssssssssss");
   };
 
   const save = () => {
@@ -142,7 +143,7 @@ function App() {
           )} */}
         </div>
 
-        <div className="mt-7 flex gap-5">
+        <section className="mt-7 items-center flex gap-5">
           <div className="flex gap-5 justify-center items-center w-full">
             {/* <label htmlFor="time">Timer:</label> */}
             <p className="bg-white rounded-full px-24 py-5 font-semibold text-2xl text-red-500">
@@ -150,26 +151,28 @@ function App() {
               {seconds % 60}
             </p>
           </div>
-          <div className="flex gap-3">
-            <button
-              onClick={startCounting}
-              className="bg-slate-400 rounded-full px-3 "
-            >
-              <VscDebugStart className="text-4xl" />
-            </button>
-            <button
-              onClick={stopCounting}
-              className="bg-slate-400 rounded-full px-3 py-0"
-            >
-              <FaStop className="text-4xl" />
-            </button>
-            <button
-              onClick={resetCounting}
-              className="bg-slate-400 rounded-full px-3"
-            >
-              <GrPowerReset className="text-4xl" />
-            </button>
-          </div>
+        </section>
+        <div className="flex items-center gap-3 mt-3">
+          <button
+            onClick={startCounting}
+            className="bg-slate-400 rounded-full px-3 "
+          >
+            <VscDebugStart className="text-6xl" />
+          </button>
+
+          <button
+            onClick={stopCounting}
+            className="bg-slate-400 rounded-full px-3 py-0"
+          >
+            <FaStop className="text-6xl" />
+          </button>
+
+          <button
+            onClick={resetCounting}
+            className="bg-slate-400 rounded-full px-3"
+          >
+            <GrPowerReset className="text-6xl" />
+          </button>
         </div>
 
         <div className="mt-5 flex gap-10 items-center">
