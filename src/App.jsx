@@ -105,7 +105,7 @@ function App() {
   useEffect(() => {
     const storedGroups = JSON.parse(localStorage.getItem("groups")) || [];
     setGroups(storedGroups);
-  }, [groups]);
+  }, []);
   return (
     <>
       <section className="bg-slate-600 p-14 flex flex-col items-center relative">
