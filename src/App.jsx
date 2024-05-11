@@ -295,50 +295,6 @@ function App() {
 
               <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
                 <td className="border-slate-600 border-r-4">03</td>
-                <td className="border-slate-600 border-r-4">50</td>
-                <td className="border-slate-600 border-r-4 bg-green-500">
-                  {" "}
-                  <button
-                    onClick={() => {
-                      setCurrentGr((prev) => ({
-                        ...prev,
-                        score: prev.score + 50,
-                      }));
-                      setChal((prev) => ({ ...prev, D3: true }));
-                    }}
-                  >
-                    {chal.D3 ? <MdDone /> : "+50"}
-                  </button>
-                </td>
-                <td className="border-slate-600 border-r-4 bg-red-500">
-                  <button
-                    onClick={() => {
-                      setCurrentGr((prev) => ({
-                        ...prev,
-                        score: prev.score - 50,
-                      }));
-                      setFail((prev) => ({ ...prev, D3: true }));
-                    }}
-                  >
-                    {fail.D3 ? <MdDone /> : "-50"}
-                  </button>
-                </td>
-                <td className="border-slate-600 bg-red-400">
-                  <button
-                    onClick={() => {
-                      setCurrentGr((prev) => ({
-                        ...prev,
-                        score: prev.score - 10,
-                      }));
-                    }}
-                  >
-                    -10
-                  </button>
-                </td>
-              </tr>
-
-              <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
-                <td className="border-slate-600 border-r-4">04</td>
                 <td className="border-slate-600 border-r-4">40</td>
                 <td className="border-slate-600 border-r-4 bg-green-500">
                   {" "}
@@ -365,6 +321,50 @@ function App() {
                     }}
                   >
                     {fail.D4 ? <MdDone /> : "-40"}
+                  </button>
+                </td>
+                <td className="border-slate-600 bg-red-400">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 10,
+                      }));
+                    }}
+                  >
+                    -10
+                  </button>
+                </td>
+              </tr>
+
+              <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
+                <td className="border-slate-600 border-r-4">04</td>
+                <td className="border-slate-600 border-r-4">50</td>
+                <td className="border-slate-600 border-r-4 bg-green-500">
+                  {" "}
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score + 50,
+                      }));
+                      setChal((prev) => ({ ...prev, D3: true }));
+                    }}
+                  >
+                    {chal.D3 ? <MdDone /> : "+50"}
+                  </button>
+                </td>
+                <td className="border-slate-600 border-r-4 bg-red-500">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 50,
+                      }));
+                      setFail((prev) => ({ ...prev, D3: true }));
+                    }}
+                  >
+                    {fail.D3 ? <MdDone /> : "-50"}
                   </button>
                 </td>
                 <td className="border-slate-600 bg-red-400">
