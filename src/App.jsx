@@ -118,7 +118,7 @@ function App() {
         <div className="flex items-center gap-6">
           <div className="flex flex-col gap-5 justify-center items-center w-full">
             {/* <label htmlFor="groupName">Group Name:</label> */}
-            <h1 className="font-semibold max-w-[55vw] pl-4 text-2xl text-blue-950 z-40 ">
+            <h1 className="font-semibold max-w-[45vw] pl-4 text-2xl text-blue-950 z-40 ">
               The first edition of the AIRC Competition Under the theme "Line
               following and directing robot"
             </h1>
