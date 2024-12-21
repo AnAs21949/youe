@@ -14,6 +14,9 @@ function App() {
     D3: false,
     D4: false,
     D5: false,
+    D6: false,
+    D7: false,
+    D8: false,
   });
   const [fail, setFail] = useState({
     D1: false,
@@ -21,8 +24,11 @@ function App() {
     D3: false,
     D4: false,
     D5: false,
+    D6: false,
+    D7: false,
+    D8: false,
   });
-  const [seconds, setSeconds] = useState(360);
+  const [seconds, setSeconds] = useState(300);
   const [counting, setCounting] = useState(false);
   const [groups, setGroups] = useState([]);
   const [currentGr, setCurrentGr] = useState({
@@ -40,7 +46,7 @@ function App() {
   };
 
   const resetCounting = () => {
-    setSeconds(360);
+    setSeconds(300);
     setCounting(false);
     // console.log("sssssssssssssssss");
   };
@@ -66,6 +72,9 @@ function App() {
       D3: false,
       D4: false,
       D5: false,
+      D6: false,
+      D7: false,
+      D8: false,
     });
     setFail({
       D1: false,
@@ -73,6 +82,9 @@ function App() {
       D3: false,
       D4: false,
       D5: false,
+      D6: false,
+      D7: false,
+      D8: false,
     });
   };
 
@@ -108,8 +120,12 @@ function App() {
   }, []);
   return (
     <>
-      <section className="bg-slate-600 p-14 flex flex-col items-center relative">
-        <img src={aeroLogo} className="absolute w-[23%] left-0 top-0" alt="" />
+      <section className="bg-slate-600 p-14 flex flex-col items-center relative w-[100vw] ">
+        <img
+          src={aeroLogo}
+          className="absolute w-[23%] left-0 top-[5rem]"
+          alt=""
+        />
         <img
           src={ComLogo}
           className="absolute w-[48%] -right-36 -top-[12.6rem]"
@@ -119,7 +135,7 @@ function App() {
           <div className="flex flex-col gap-5 justify-center items-center w-full">
             {/* <label htmlFor="groupName">Group Name:</label> */}
             <h1 className="font-semibold max-w-[45vw] pl-4 text-2xl text-blue-950 z-40 ">
-              The first edition of the AIRC Competition Under the theme "Line
+              The second edition of the AIRC Competition Under the theme "Line
               following and directing robot"
             </h1>
             <input
@@ -192,6 +208,7 @@ function App() {
             </button>
           </div>
 
+          {/* Tableau des défis */}
           <div className="h-[45vh] font-semibold text-blue-900">
             <table className="bg-white rounded-xl h-[100%] ">
               <thead>
@@ -206,19 +223,19 @@ function App() {
 
               <tr className="  relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
                 <td className="border-slate-600 border-r-4 ">01</td>
-                <td className="border-slate-600 border-r-4">20</td>
+                <td className="border-slate-600 border-r-4">30</td>
                 <td className="border-slate-600 border-r-4 bg-green-500">
                   {" "}
                   <button
                     onClick={() => {
                       setCurrentGr((prev) => ({
                         ...prev,
-                        score: prev.score + 20,
+                        score: prev.score + 30,
                       }));
                       setChal((prev) => ({ ...prev, D1: true }));
                     }}
                   >
-                    {chal.D1 ? <MdDone /> : "+20"}
+                    {chal.D1 ? <MdDone /> : "+30"}
                   </button>
                 </td>
                 <td className="border-slate-600 border-r-4 bg-red-500">
@@ -226,12 +243,12 @@ function App() {
                     onClick={() => {
                       setCurrentGr((prev) => ({
                         ...prev,
-                        score: prev.score - 20,
+                        score: prev.score - 30,
                       }));
                       setFail((prev) => ({ ...prev, D1: true }));
                     }}
                   >
-                    {fail.D1 ? <MdDone /> : "-20"}
+                    {fail.D1 ? <MdDone /> : "-30"}
                   </button>
                 </td>
 
@@ -295,19 +312,19 @@ function App() {
 
               <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
                 <td className="border-slate-600 border-r-4">03</td>
-                <td className="border-slate-600 border-r-4">40</td>
+                <td className="border-slate-600 border-r-4">30</td>
                 <td className="border-slate-600 border-r-4 bg-green-500">
                   {" "}
                   <button
                     onClick={() => {
                       setCurrentGr((prev) => ({
                         ...prev,
-                        score: prev.score + 40,
+                        score: prev.score + 30,
                       }));
                       setChal((prev) => ({ ...prev, D4: true }));
                     }}
                   >
-                    {chal.D4 ? <MdDone /> : "+40"}
+                    {chal.D4 ? <MdDone /> : "+30"}
                   </button>
                 </td>
                 <td className="border-slate-600 border-r-4 bg-red-500">
@@ -315,12 +332,12 @@ function App() {
                     onClick={() => {
                       setCurrentGr((prev) => ({
                         ...prev,
-                        score: prev.score - 40,
+                        score: prev.score - 30,
                       }));
                       setFail((prev) => ({ ...prev, D4: true }));
                     }}
                   >
-                    {fail.D4 ? <MdDone /> : "-40"}
+                    {fail.D4 ? <MdDone /> : "-30"}
                   </button>
                 </td>
                 <td className="border-slate-600 bg-red-400">
@@ -339,8 +356,140 @@ function App() {
 
               <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
                 <td className="border-slate-600 border-r-4">04</td>
-                <td className="border-slate-600 border-r-4">50</td>
+                <td className="border-slate-600 border-r-4">30</td>
                 <td className="border-slate-600 border-r-4 bg-green-500">
+                  {" "}
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score + 30,
+                      }));
+                      setChal((prev) => ({ ...prev, D3: true }));
+                    }}
+                  >
+                    {chal.D3 ? <MdDone /> : "+30"}
+                  </button>
+                </td>
+                <td className="border-slate-600 border-r-4 bg-red-500">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 30,
+                      }));
+                      setFail((prev) => ({ ...prev, D3: true }));
+                    }}
+                  >
+                    {fail.D3 ? <MdDone /> : "-30"}
+                  </button>
+                </td>
+                <td className="border-slate-600 bg-red-400">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 10,
+                      }));
+                    }}
+                  >
+                    -10
+                  </button>
+                </td>
+              </tr>
+
+              <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0">
+                <td className="border-slate-600 border-r-4">05</td>
+                <td className="border-slate-600 border-r-4">40</td>
+                <td className="border-slate-600 border-x-4 bg-green-500">
+                  {" "}
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score + 40,
+                      }));
+                      setChal((prev) => ({ ...prev, D5: true }));
+                    }}
+                  >
+                    {chal.D5 ? <MdDone /> : "+40"}
+                  </button>
+                </td>
+                <td className="border-slate-600 border-x-4 bg-red-500">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 40,
+                      }));
+                      setFail((prev) => ({ ...prev, D5: true }));
+                    }}
+                  >
+                    {fail.D5 ? <MdDone /> : "-40"}
+                  </button>
+                </td>
+                <td className="border-slate-600 border-l-4 bg-red-400">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 10,
+                      }));
+                    }}
+                  >
+                    -10
+                  </button>
+                </td>
+              </tr>
+
+              <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0 ">
+                <td className="border-slate-600 border-r-4">06</td>
+                <td className="border-slate-600 border-r-4">20</td>
+                <td className="border-slate-600 border-x-4 bg-green-500">
+                  {" "}
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score + 20,
+                      }));
+                      setChal((prev) => ({ ...prev, D6: true }));
+                    }}
+                  >
+                    {chal.D6 ? <MdDone /> : "+20"}
+                  </button>
+                </td>
+                <td className="border-slate-600 border-r-4 bg-red-500">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 20,
+                      }));
+                      setFail((prev) => ({ ...prev, D6: true }));
+                    }}
+                  >
+                    {fail.D6 ? <MdDone /> : "-20"}
+                  </button>
+                </td>
+                <td className="border-slate-600 bg-red-400">
+                  <button
+                    onClick={() => {
+                      setCurrentGr((prev) => ({
+                        ...prev,
+                        score: prev.score - 10,
+                      }));
+                    }}
+                  >
+                    -10
+                  </button>
+                </td>
+              </tr>
+
+              <tr className="relative after:absolute after:bottom-0 after:w-full after:bg-slate-600 after:h-1 after:left-0">
+                <td className="border-slate-600 border-r-4">07</td>
+                <td className="border-slate-600 border-r-4">50</td>
+                <td className="border-slate-600 border-x-4 bg-green-500">
                   {" "}
                   <button
                     onClick={() => {
@@ -348,10 +497,10 @@ function App() {
                         ...prev,
                         score: prev.score + 50,
                       }));
-                      setChal((prev) => ({ ...prev, D3: true }));
+                      setChal((prev) => ({ ...prev, D7: true }));
                     }}
                   >
-                    {chal.D3 ? <MdDone /> : "+50"}
+                    {chal.D7 ? <MdDone /> : "+50"}
                   </button>
                 </td>
                 <td className="border-slate-600 border-r-4 bg-red-500">
@@ -361,10 +510,10 @@ function App() {
                         ...prev,
                         score: prev.score - 50,
                       }));
-                      setFail((prev) => ({ ...prev, D3: true }));
+                      setFail((prev) => ({ ...prev, D7: true }));
                     }}
                   >
-                    {fail.D3 ? <MdDone /> : "-50"}
+                    {fail.D7 ? <MdDone /> : "-50"}
                   </button>
                 </td>
                 <td className="border-slate-600 bg-red-400">
@@ -382,20 +531,20 @@ function App() {
               </tr>
 
               <tr className="border-slate-600 ">
-                <td className="border-slate-600 border-r-4">05</td>
-                <td className="border-slate-600 border-r-4">80</td>
-                <td className="border-slate-600 border-r-4 bg-green-500">
+                <td className="border-slate-600 border-r-4">08</td>
+                <td className="border-slate-600 border-r-4">40</td>
+                <td className="border-slate-600 border-x-4 bg-green-500">
                   {" "}
                   <button
                     onClick={() => {
                       setCurrentGr((prev) => ({
                         ...prev,
-                        score: prev.score + 80,
+                        score: prev.score + 40,
                       }));
-                      setChal((prev) => ({ ...prev, D5: true }));
+                      setChal((prev) => ({ ...prev, D8: true }));
                     }}
                   >
-                    {chal.D5 ? <MdDone /> : "+80"}
+                    {chal.D8 ? <MdDone /> : "+40"}
                   </button>
                 </td>
                 <td className="border-slate-600 border-r-4 bg-red-500">
@@ -403,12 +552,12 @@ function App() {
                     onClick={() => {
                       setCurrentGr((prev) => ({
                         ...prev,
-                        score: prev.score - 80,
+                        score: prev.score - 40,
                       }));
-                      setFail((prev) => ({ ...prev, D5: true }));
+                      setFail((prev) => ({ ...prev, D8: true }));
                     }}
                   >
-                    {fail.D5 ? <MdDone /> : "-80"}
+                    {fail.D8 ? <MdDone /> : "-40"}
                   </button>
                 </td>
                 <td className="border-slate-600 bg-red-400">
@@ -466,7 +615,7 @@ function App() {
 
         <button
           onClick={clearStorage}
-          className="bg-red-600 rounded-lg px-4 py-3 mt-16"
+          className="bg-red-600 text-white font-bold space-x-4 rounded-lg px-4 py-3 mt-16"
         >
           Clear Everything
         </button>
